@@ -12,6 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const pages = ["Home", "Products", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -19,6 +21,8 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const navigate = useNavigate()
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -124,14 +128,20 @@ function ResponsiveAppBar() {
             >
               Home
             </Button>
+            
+            <Link to='/products' >
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
               Products
             </Button>
+            </Link>
+
+{/* link works as anchor tag better to use 'useNavigate' */}
+
             <Button
-              onClick={handleCloseNavMenu}
+              onClick={() => navigate('/about')}
               sx={{ my: 2, color: "white", display: "block" }}
             >
               About
