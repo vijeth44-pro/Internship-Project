@@ -129,10 +129,10 @@ function ResponsiveAppBar() {
               Home
             </Button>
             
-            <Link to='/products' >
+            <Link to='/products' style={{textDecoration:'none'}}>
             <Button
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
+              sx={{ my: 2, color: "white", display: "block"}}
             >
               Products
             </Button>
