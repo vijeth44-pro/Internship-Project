@@ -123,7 +123,7 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
-              onClick={handleCloseNavMenu}
+              onClick= {()=>navigate('/')}
               sx={{ my: 2, color: "white", display: "block" }}
             >
               Home
