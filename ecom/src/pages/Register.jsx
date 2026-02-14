@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button, TextField } from "@mui/material";
+import axios from "axios";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -14,7 +15,12 @@ export default function Register() {
 
   const handleSubmit = async() =>{
     try {
-        console.log(form)
+        const res = await axios.post("http://localhost:1000/users/addUser", form)
+        console.log(res.data)
+        if(res.data.success){
+            alert("Data added sucessfully")
+        }
+
     } catch (error) {
         console.log(error)
     }
