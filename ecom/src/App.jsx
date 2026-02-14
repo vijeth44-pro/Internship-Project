@@ -8,6 +8,7 @@ import ResponsiveAppBar from './components/Navbar'
 import Footer from './components/Footer'
 import Products from './pages/Products'
 import About from './pages/About'
+import Regsietr from './pages/Register'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/products' element ={<Products/>}/>
         <Route path='/about' element ={<About/>}/>
+        <Route path='/register' element ={<Regsietr/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>
