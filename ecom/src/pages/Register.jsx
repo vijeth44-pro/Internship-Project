@@ -64,7 +64,7 @@ export default function Register() {
           value={form.userpassword}
         />
 
-        <Button variant="contained" onClick={handleSubmit}>Add User</Button>
+        <Button variant="contained" onClick={handleSubmit}>Signup User</Button>
       </Box>
     </div>
   );
