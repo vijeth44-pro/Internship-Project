@@ -1,7 +1,27 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Box, Button, TextField } from "@mui/material";
 
 export default function Login() {
+    const [form,setForm] = useState({
+        useremail:"",
+        userpassword:""
+    })
+
+    const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value }); //
+    };
+
+    const handleSubmit = async() =>{
+        try {
+            const res = await axios.post("http://localhost:1000/login", form)
+            console.log(res.data)
+            if(res.data.success){
+                alert("Data added sucessfully")
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Login Page</h1>
@@ -18,19 +38,19 @@ export default function Login() {
           id="outlined-basic"
           label="Email"
           variant="outlined"
-          //   name=
-          //   onChange=
-          //   value=
+            name="useremail"
+            onChange={handleChange}
+            value={form.useremail}
         />
         <TextField
           id="outlined-basic"
           label="Password"
           variant="outlined"
-          //   name=
-          //   onChange=
-          //   value=
+            name="userpassword"
+            onChange={handleChange}
+            value={form.userpassword}
         />
-        <Button variant="contained" >Login User</Button>
+        <Button variant="contained" onClick={handleSubmit}>Login User</Button>
       </Box>
     </div>
   );
