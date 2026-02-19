@@ -19,7 +19,11 @@ export default function Login() {
                 alert("Data added sucessfully")
             }
         } catch (error) {
-            console.log(error)
+            if (error.response && error.response.data.message){
+              alert(error.response.data.message)
+            }else{
+              alert("Server Error")
+            }
         }
     }
   return (
