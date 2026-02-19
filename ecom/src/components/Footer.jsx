@@ -7,7 +7,7 @@ export default function
     <div>
         <Box sx={{border:'2px solid black', borderRadius:5,backgroundColor:'grey'}}>
             <Typography sx={{textAlign:'center', fontWeight:'bold', padding:'10px'}}>
-                Designed by ChatGPT 
+                Designed by Vijeth 
             </Typography>
         </Box>
     </div>
