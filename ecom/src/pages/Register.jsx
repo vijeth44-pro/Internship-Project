@@ -29,6 +29,7 @@ export default function Register() {
 
   return (
     <div>
+      <h1 style={{textAlign:'center'}}>Register Page</h1>
       <Box sx={{ display: "flex", justifyContent: "space-around", m: 4 }}>
         <TextField
           id="outlined-basic"
