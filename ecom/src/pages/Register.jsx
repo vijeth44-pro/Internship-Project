@@ -30,12 +30,12 @@ export default function Register() {
   return (
     <div>
       <h1 style={{textAlign:'center'}}>Register Page</h1>
-      <Box sx={{ display: "flex", justifyContent: "space-around", m: 4 }}>
+      <Box sx={{ display: "flex", flexDirection:"column", gap: 3 ,width:'300px', margin:'auto' }}>
         <TextField
           id="outlined-basic"
           label="Name"
           variant="outlined"
-          name="username"
+          name="username" 
           onChange={handleChange}
           value={form.username}
         />
