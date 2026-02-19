@@ -7,6 +7,7 @@ export default function Register() {
     username: "",
     useremail: "",
     userphone: "",
+    userpassword:""
   });
 
   const handleChange = (e) => {
@@ -15,7 +16,7 @@ export default function Register() {
 
   const handleSubmit = async() =>{
     try {
-        const res = await axios.post("http://localhost:1000/users/addUser", form)
+        const res = await axios.post("http://localhost:1000/auth/register", form)
         console.log(res.data)
         if(res.data.success){
             alert("Data added sucessfully")
@@ -52,6 +53,14 @@ export default function Register() {
           name="userphone"
           onChange={handleChange}
           value={form.userphone}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          name="userpassword"
+          onChange={handleChange}
+          value={form.userpassword}
         />
 
         <Button variant="contained" onClick={handleSubmit}>Add User</Button>
