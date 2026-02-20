@@ -1,5 +1,6 @@
 import React ,{useState} from "react";
 import { Box, Button, TextField } from "@mui/material";
+import axios from 'axios'
 
 export default function Login() {
     const [form,setForm] = useState({
@@ -13,17 +14,13 @@ export default function Login() {
 
     const handleSubmit = async() =>{
         try {
-            const res = await axios.post("http://localhost:1000/login", form)
+            const res = await axios.post("http://localhost:1000/auth/login", form)
             console.log(res.data)
             if(res.data.success){
-                alert("Data added sucessfully")
+                alert("Loged in sucessfully")
             }
         } catch (error) {
-            if (error.response && error.response.data.message){
-              alert(error.response.data.message)
-            }else{
-              alert("Server Error")
-            }
+          alert(error)
         }
     }
   return (
