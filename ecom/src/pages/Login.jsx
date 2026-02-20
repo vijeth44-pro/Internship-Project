@@ -18,6 +18,7 @@ export default function Login() {
             console.log(res.data)
             if(res.data.success){
                 alert("Loged in sucessfully")
+                localStorage.setItem("mytoken",res.data.token)
             }
         } catch (error) {
           alert(error)
