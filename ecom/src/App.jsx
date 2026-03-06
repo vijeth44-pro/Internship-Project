@@ -10,7 +10,8 @@ import Products from './pages/Products'
 import About from './pages/About'
 import Regsietr from './pages/Register'
 import Login from './pages/Login'
-import CreatePost from './pages/CreatePost'
+// import CreatePost from './pages/CreatePost'
+import AdPost from './pages/AdPost'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,7 +27,7 @@ function App() {
         <Route path='/about' element ={<About/>}/>
         <Route path='/register' element ={<Regsietr/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/createpost' element={<CreatePost/>}/>
+        <Route path='/adpost' element={<AdPost/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>
