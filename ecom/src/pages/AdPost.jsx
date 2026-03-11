@@ -5,12 +5,22 @@ import axios from 'axios'
 export default function AdPost() {
   const [form, setForm] = useState({
     caption: "",
-    image: null,
+    image: null
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const token = localStorage.getItem("mytoken");
+      if (!token) {
+        alert("Please login first.");
+        return;
+      }
+      if (!form.caption || !form.image) {
+        alert("Caption and image are required.");
+        return;
+      }
+
       const formData = new FormData();
       formData.append("caption", form.caption);
       formData.append("image", form.image);
@@ -19,7 +29,7 @@ export default function AdPost() {
         formData,
         {
           headers: {
-            "auth-token": localStorage.getItem("myToken")
+            "auth-token": token
           }
         }
       );
@@ -29,7 +39,9 @@ export default function AdPost() {
         alert(res.data.message);
       }
     } catch (error) {
-      alert(error)
+      const message = error?.response?.data?.message || error.message || "Request failed";
+      alert(message);
+      console.log("AdPost error:", error?.response?.data || error);
     }
   };
   return (
