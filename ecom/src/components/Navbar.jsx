@@ -59,7 +59,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            My Shop
+            Rai Angadi
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
